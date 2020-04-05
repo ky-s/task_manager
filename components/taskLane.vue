@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" sm="4">
+  <v-col cols="12" :sm="col">
     <h1>{{ title }}</h1>
     <draggable tag="div" :options="{group: 'TASKS'}">
       <task-card v-for="task in tasks" v-bind:key="task.name" :task="task" />
@@ -19,6 +19,7 @@ export default {
   props: {
     title: String,
     tasks: [],
+    col: Number
   }
 }
 </script>

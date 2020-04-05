@@ -11,9 +11,12 @@
     >
       <v-container>
         <v-row>
-          <task-lane :title="'TODO'" :tasks="todos" />
-          <task-lane :title="'In Progress'" :tasks="inProgresses" />
-          <task-lane :title="'Done'" :tasks="dones" />
+          <task-lane
+           v-for="taskLane in taskLanes"
+           :title="taskLane.title"
+           :tasks="taskLane.tasks"
+           :col="taskLane.col"
+          />
         </v-row>
       </v-container>
 
@@ -31,31 +34,34 @@ export default {
     TaskLane
   },
   data() {
-    var tasks = {
-      todos: [],
-      inProgresses: [],
-      dones: []
-    }
-
+    var todos = []
     for (let i = 1; i <= 20; i++) {
-      tasks.todos = tasks.todos.concat([
+      todos = todos.concat([
         { name: 'test' + i,  description: 'test を test が test で test に test する' }
       ])
     }
 
+    var inProgresses = []
     for (let i = 1; i <= 20; i++) {
-      tasks.inProgresses = tasks.inProgresses.concat([
+      inProgresses = inProgresses.concat([
         { name: 'test' + (i + 20),  description: 'test を test が test で test に test する' }
       ])
     }
 
+    var dones = []
     for (let i = 1; i <= 20; i++) {
-      tasks.dones = tasks.dones.concat([
+      dones = dones.concat([
         { name: 'test' + (i + 40),  description: 'test を test が test で test に test する' }
       ])
     }
 
-    return tasks
+    return {
+      taskLanes: [
+        { title: 'TODO',        tasks: todos,        col: 4 },
+        { title: 'In Progress', tasks: inProgresses, col: 4 },
+        { title: 'Done',        tasks: dones,        col: 4 },
+      ]
+    }
   }
 }
 </script>
