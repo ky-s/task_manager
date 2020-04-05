@@ -1,10 +1,10 @@
 <template>
   <v-card>
     <v-card-title class="headline">
-      {{ name }}
+      {{ task.name }}
     </v-card-title>
     <v-card-text>
-      {{ description }}
+      {{ task.description }}
     </v-card-text>
     <v-card-actions>
       <v-spacer />
@@ -23,8 +23,7 @@
 <script>
 export default {
   props: {
-    name: String,
-    description: String
+    task: {}
   }
 }
 </script>

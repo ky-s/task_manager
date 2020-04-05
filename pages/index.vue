@@ -9,23 +9,13 @@
       sm8
       md6
     >
-      <div class="text-center">
-      </div>
-
-      <v-row>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
-          <h1>TODO</h1>
-          <task-card v-for="task in todos" v-bind:key="task.name" :name="task.name" :description="task.description" />
-        </draggable>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
-          <h1>In progress</h1>
-          <task-card v-for="task in inProgresses" v-bind:key="task.name" :name="task.name" :description="task.description" />
-        </draggable>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
-          <h1>Done</h1>
-          <task-card v-for="task in dones" v-bind:key="task.name" :name="task.name" :description="task.description" />
-        </draggable>
-      </v-row>
+      <v-container>
+        <v-row>
+          <task-lane :title="'TODO'" :tasks="todos" />
+          <task-lane :title="'In Progress'" :tasks="inProgresses" />
+          <task-lane :title="'Done'" :tasks="dones" />
+        </v-row>
+      </v-container>
 
     </v-flex>
   </v-layout>
@@ -33,16 +23,14 @@
 
 <script>
 import draggable from 'vuedraggable'
-import TaskCard from '~/components/taskCard.vue'
+import TaskLane from '~/components/taskLane.vue'
 
 export default {
   components: {
     draggable,
-    TaskCard
+    TaskLane
   },
   data() {
-    var tasks = []
-
     var tasks = {
       todos: [],
       inProgresses: [],
