@@ -18,7 +18,7 @@ export default {
   },
   props: {
     title: String,
-    tasks: [],
+    tasks: Array,
     col: Number
   }
 }
