@@ -13,15 +13,15 @@
       </div>
 
       <v-row>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'ITEMS'}">
+        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
           <h1>TODO</h1>
           <task-card v-for="task in todos" v-bind:key="task.name" :name="task.name" :description="task.description" />
         </draggable>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'ITEMS'}">
+        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
           <h1>In progress</h1>
           <task-card v-for="task in inProgresses" v-bind:key="task.name" :name="task.name" :description="task.description" />
         </draggable>
-        <draggable tag="v-col" cols="12" sm="4" :options="{group:'ITEMS'}">
+        <draggable tag="v-col" cols="12" sm="4" :options="{group:'TASKS'}">
           <h1>Done</h1>
           <task-card v-for="task in dones" v-bind:key="task.name" :name="task.name" :description="task.description" />
         </draggable>
