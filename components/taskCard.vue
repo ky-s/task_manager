@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card :id="'task-' + task.id" :data-id="task.id">
     <v-card-title class="headline">
       {{ task.name }}
     </v-card-title>
