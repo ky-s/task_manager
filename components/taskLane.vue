@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" :sm="col">
     <h1>{{ title }}</h1>
-    <draggable tag="div" :options="{group: 'TASKS', animation: 200, delay: 50}" @end="taskMoved" :data-id="title">
+    <draggable tag="div" :options="{group: 'TASKS', animation: 200, delay: 50}" @end="taskMoved" :data-id="title" style="height: 100%">
       <task-card v-for="task in tasks" v-bind:key="task.name" :task="task" />
     </draggable>
   </v-col>

@@ -3,24 +3,19 @@
     column
     justify-center
     align-center
+    class="teal darken-4 pa-4"
   >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <v-container>
-        <v-row>
-          <task-lane
-           v-for="taskLane in taskLanes"
-           :title="taskLane.title"
-           :tasks="taskLane.tasks"
-           :col="taskLane.col"
-          />
-        </v-row>
-      </v-container>
+    <v-container class="teal ma-2">
+      <v-row>
+        <task-lane
+         v-for="taskLane in taskLanes"
+         :title="taskLane.title"
+         :tasks="taskLane.tasks"
+         :col="taskLane.col"
+        />
+      </v-row>
+    </v-container>
 
-    </v-flex>
   </v-layout>
 </template>
 
