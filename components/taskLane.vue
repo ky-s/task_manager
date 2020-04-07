@@ -33,7 +33,7 @@ export default {
       if (fromLane != toLane) {
         console.dir('task: ' + id + ' moved. ' + fromLane + ' => ' + toLane)
 
-        this.$axios.put('/api/task/' + id + '.' + toLane)
+        this.$axios.put('/api/task/' + id + '/' + fromLane + '-' + toLane)
           .then(response => { console.dir(response) })
       }
     }
