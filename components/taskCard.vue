@@ -1,11 +1,11 @@
 <template>
   <v-hover>
     <template v-slot="{ hover }">
-      <v-card :id="'task-' + task.id" :data-id="task.id" class='teal lighten-2 my-4' :elevation="hover ? 24 : 6">
-        <v-card-title class="headline">
+      <v-card :id="'task-' + task.id" :data-id="task.id" color='teal lighten-2 my-4' :elevation="hover ? 24 : 6">
+        <v-card-title class="headline black--text">
           {{ task.name }}
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="black--text">
           {{ task.description }}
         </v-card-text>
         <v-card-actions>

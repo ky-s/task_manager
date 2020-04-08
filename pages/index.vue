@@ -3,9 +3,10 @@
     column
     justify-center
     align-center
-    class="teal darken-4 pa-4"
+    class="teal darken-4 py-4"
   >
-    <v-container class="teal ma-2">
+    <v-text class="display-1">Project-X</v-text>
+    <v-container class="teal darken-2 ma-2">
       <v-row>
         <task-lane
          v-for="taskLane in taskLanes"
@@ -20,12 +21,10 @@
 </template>
 
 <script>
-import draggable from 'vuedraggable'
 import TaskLane from '~/components/taskLane.vue'
 
 export default {
   components: {
-    draggable,
     TaskLane
   },
   data() {
